@@ -119,15 +119,14 @@ const changeInfo = (ActualMovies) => {
     let images = document.querySelector('.images')
     let iframe = document.querySelector('iframe')
     let movie = document.querySelectorAll('.movie')
+    let ratio = document.querySelector('.ratio')
     movie.forEach(element => {
         element.addEventListener("click", () => {
             details.style.display = "block"
             gsap.from(".details", { x: 2500, duration: 0.5 });
             document.querySelector('.movies').style.animation = "departMovies 1s"
             setTimeout(() => {
-                movie.forEach(elm => {
-                    elm.style.display = "none"
-                });
+                document.querySelector('.movies').style.display = "none"
             }, 1000);
             ActualMovies.forEach(e => {
                 if (e.id === element.id) {
@@ -139,10 +138,11 @@ const changeInfo = (ActualMovies) => {
                     category.innerHTML = setCategoriesID(e.category);
                     iframe.src = urlEmbed(e.video)
                     if (adult === false && e.category === "R7njrf6DPHVvNRLpz4P0") {
-                        iframe.src = urlEmbed('https://www.youtube.com/watch?v=uHKfrz65KSU')
+                        iframe.src = urlEmbed('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
                     }
                     dislikes.innerHTML = e.dislikes;
                     likes.innerHTML = e.likes;
+                    ratio.innerHTML = numberRatio(e.likes, e.dislikes) + '%'
                     images.style.backgroundImage = `url(${e.img})`
                     if (adult === false && e.category === "R7njrf6DPHVvNRLpz4P0") {
                         images.style.backgroundImage = `url(https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80)`
@@ -212,6 +212,18 @@ const changeInfo = (ActualMovies) => {
     })
 }
 
+const numberRatio = (like, dislike) => {
+    if (like > dislike) {
+        return (Math.floor((like / (like + dislike)) * 100))
+    }
+    if (like < dislike) {
+        return (-Math.floor((like / (like + dislike)) * 100))
+    }
+    if (like === dislike) {
+        return 0
+    }
+}
+
 const setCategoriesID = (e) => {
     let categoryID = null
     categoriesApiStock.map(elm => {
@@ -239,17 +251,14 @@ const urlEmbed = (i) => {
 
 const closeInfo = () => {
     let cross = document.querySelector('.cross')
-    let movie = document.querySelectorAll('.movie')
     cross.addEventListener('click', () => {
         gsap.to(".details", { x: 2500, duration: 0.5 });
+        document.querySelector('.movies').style.animation = "arrivedMovies 1s"
+        document.querySelector('.movies').style.display = "grid"
         setTimeout(() => {
             details.style.display = "none"
             gsap.to(".details", { x: 0, duration: 0.5 });
         }, 100);
-        movie.forEach(e => {
-            e.style.display = ("block")
-        });
-        createMovies(moviesApiStock)
     })
 }
 
@@ -416,7 +425,7 @@ const searchFunction = () => {
     const formData = new FormData(searchForm);
     let search = formData.get('search')
     moviesApiStock.filter(movie => {
-        if (movie.name.toUpperCase().includes(search.toUpperCase())) {
+        if (movie.name.toUpperCase().includes(search.toUpperCase()) || movie.author.toUpperCase().includes(search.toUpperCase()) ||movie.description.toUpperCase().includes(search.toUpperCase())) {
             stock.push(movie)
         }
     })
@@ -584,6 +593,24 @@ const deleteCategoriesOnClick = () => {
         }
         createMovies(moviesApiStock)
     }
+}
+
+const sortLikes = () => {
+    let stock = [...moviesApiStock]
+    stock.sort(
+        (p1, p2) => {
+            return (p1.likes < p2.likes) ? 1 : (p1.likes > p2.likes) ? -1 : 0;
+        });
+    createMovies(stock)
+}
+
+const sortDislikes = () => {
+    let stock = [...moviesApiStock]
+    stock.sort(
+        (p1, p2) => {
+            return (p1.dislikes < p2.dislikes) ? 1 : (p1.dislikes > p2.dislikes) ? -1 : 0;
+        });
+    createMovies(stock)
 }
 
 //#endregion
@@ -847,6 +874,5 @@ const CategoriesEditCreate = () => {
 //TODO *****************************/
 //TODO *****************************/
 //TODO *****************************/
-
 
 closeInfo()

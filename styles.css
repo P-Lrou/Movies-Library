@@ -128,6 +128,23 @@ table {
     border-spacing: 0;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(24, 24, 24);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a30507;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a10507c9;
+}
+
 @font-face {
     font-family: RankedSports;
     src: url(fonts/RankedSports-Regular.ttf);
@@ -228,9 +245,9 @@ body {
 .menu {
     position: fixed;
     top: 0;
-    margin-top: 8vw;
+    margin-top: 5vw;
     width: 16vw;
-    height: 35vw;
+    height: 40vw;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 1.5vw;
 }
@@ -1272,7 +1289,7 @@ iframe {
         top: 0;
         margin-top: 20vw;
         width: 30vw;
-        height: 165vw;
+        height: 200vw;
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 1.5vw;
     }
