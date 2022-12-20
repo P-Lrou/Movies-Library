@@ -1287,7 +1287,7 @@ iframe {
     .menu {
         position: fixed;
         top: 0;
-        margin-top: 20vw;
+        margin-top: 10vw;
         width: 30vw;
         height: 200vw;
         background-color: rgba(0, 0, 0, 0.5);
