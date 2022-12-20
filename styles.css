@@ -1,0 +1,2214 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@font-face {
+    font-family: RankedSports;
+    src: url(fonts/RankedSports-Regular.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+body {
+    background-color: #040c36;
+    transition: all 1s;
+    overflow: hidden;
+}
+
+/*TODO *******************************/
+/*TODO ********** Start Menu *********/
+/*TODO *******************************/
+.start {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    margin-bottom: 0vw;
+    background-image: url('pictures/cinéma.png');
+    background-size: cover;
+    z-index: 5165176;
+}
+
+.start h1 {
+    position: absolute;
+    font-family: 'RankedSports';
+    color: white;
+    font-size: 4vw;
+    margin-top: 10vw;
+    margin-left: 21vw;
+}
+
+.start form {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 3vw;
+    margin-top: 18vw;
+    margin-left: 38vw;
+}
+
+.start input {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 2vw;
+    margin-left: 7vw;
+    width: 10vw;
+    background-color: transparent;
+}
+
+.start button {
+    background-color: transparent;
+    margin-left: 9.5vw;
+    font-size: 1.5vw;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 10px;
+    border-color: white;
+    transition: all 1s;
+}
+
+.start button:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/*TODO *******************************/
+/*TODO *******************************/
+/*TODO *******************************/
+
+
+/*! **********************************/
+/*! ********** Static Menu ***********/
+/*! **********************************/
+
+.static {
+    display: none;
+}
+
+.static #mainTitle {
+    position: fixed;
+    padding-left: 40vw;
+    width: 100vw;
+    top: 0vw;
+    color: white;
+    font-size: 3vw;
+    font-family: 'RankedSports';
+    z-index: 5165165;
+    backdrop-filter: blur(10px);
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    margin-top: 8vw;
+    width: 16vw;
+    height: 35vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1.5vw;
+}
+
+.menu #menuTitle {
+    color: white;
+    font-size: 2vw;
+    text-align: center;
+    font-family: 'RankedSports';
+}
+
+.menu #moviesNumber {
+    color: white;
+    font-size: 1vw;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.menu .selectors {
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 1vw;
+    font-family: 'Roboto', sans-serif;
+}
+
+.menu .gridMenu {
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    margin-top: 1.5vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.2vw;
+}
+
+.menu #searchForm {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    font-size: 1vw;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+}
+
+.menu input {
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    color: white;
+    font-size: 1vw;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+}
+
+.gridMenu img {
+    width: 5vw;
+    filter: invert(1);
+    transition: all 0.5s;
+}
+
+.gridMenu img:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+/*! **********************************/
+/*! **********************************/
+/*! **********************************/
+
+
+/*? **********************************/
+/*? ************* Movies *************/
+/*? **********************************/
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1.2vw;
+    margin-left: 22vw;
+    margin-right: 5vw;
+    margin-top: 5vw;
+    margin-bottom: 3.5vw;
+}
+
+.movie {
+    position: relative;
+    width: 10.2vw;
+    height: 16.8vw;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s;
+    box-shadow: 0px 0px 2vh rgb(0, 0, 0);
+}
+
+.movie:hover {
+    box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+    transition: all 0.5s;
+    scale: 1.15;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/*? **********************************/
+/*? **********************************/
+/*? **********************************/
+
+
+/*TODO *******************************/
+/*TODO ********** Details ************/
+/*TODO *******************************/
+
+.details {
+    position: fixed;
+    display: none;
+    top: 5vw;
+    left: 22vw;
+    width: 70vw;
+    height: 40vw;
+    color: white;
+    background-color: #151515;
+    box-shadow: 0px 0px 2vh rgb(0, 0, 0);
+    animation: detailsArrived 0.5;
+}
+
+.details .cross {
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.details .cross:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+.details h1 {
+    color: white;
+    font-size: 4vw;
+    text-align: center;
+    font-family: 'RankedSports';
+}
+
+.details h2 {
+    color: white;
+    font-size: 2vw;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 35vw;
+    margin-right: 1vw;
+}
+
+.details span {
+    color: white;
+    font-size: 1.5vw;
+    font-family: 'Roboto', sans-serif;
+}
+
+.images {
+    display: block;
+    position: absolute;
+    width: 25.2vw;
+    height: 31.8vw;
+    background-position: center;
+    background-size: cover;
+    margin-left: 5vw;
+    box-shadow: 0px 0px 1vh rgb(255, 255, 255);
+}
+
+iframe {
+    position: relative;
+    margin-left: 35vw;
+    box-shadow: 0px 0px 1vh rgb(255, 255, 255);
+}
+
+.ButtonsDetails {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 20vw;
+    left: 65vw;
+}
+
+#likeSVG {
+    width: 4vw;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+#likeSVG:hover {
+    scale: 1.2;
+    transition: all 0.5s;
+}
+
+#dislikeSVG {
+    width: 4vw;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+#dislikeSVG:hover {
+    scale: 1.2;
+    transition: all 0.5s;
+}
+
+.like {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.dislike {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.button_modal {
+    position: relative;
+    width: 4vw;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.button_modal:hover {
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+.button_deleteMovie {
+    position: relative;
+    width: 4vw;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.button_deleteMovie:hover {
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+/*TODO *******************************/
+/*TODO *******************************/
+/*TODO *******************************/
+
+
+/*! **********************************/
+/*! *********** Edit Menu ************/
+/*! **********************************/
+
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    position: absolute;
+    left: 28%;
+    top: 13%;
+    margin: auto;
+    background-color: #252525;
+    z-index: 1;
+    padding-bottom: 3vw;
+    width: 25%;
+    margin-bottom: 1%;
+    border-radius: 5vh;
+    box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+}
+
+.modal .cross2 {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modal .cross2:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+.modal .editButton {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modal .editButton:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+.modal form {
+    position: relative;
+    justify-content: center;
+    margin-top: 5vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal label {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+}
+
+.modal input {
+    font-family: 'Roboto', sans-serif;
+    width: 10vw;
+    border-color: darkred;
+    border-style: solid;
+}
+
+.modal select {
+    font-family: 'Roboto', sans-serif;
+    width: 10vw;
+    border-color: darkred;
+    border-style: solid;
+}
+
+/*! **********************************/
+/*! **********************************/
+/*! **********************************/
+
+
+/*? **********************************/
+/*? ************* Delete *************/
+/*? **********************************/
+
+.overlayDelete {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalDelete {
+    position: absolute;
+    left: 28%;
+    top: 20%;
+    margin: auto;
+    background-color: #252525;
+    z-index: 1;
+    padding-bottom: 3vw;
+    width: 50%;
+    margin-bottom: 1%;
+    border-radius: 5vh;
+    box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+}
+
+.choiceDelete {
+    display: flex;
+    justify-content: center;
+}
+
+.choiceDelete .oui {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1vw;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.choiceDelete .non {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1vw;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.choiceDelete .oui:hover {
+    scale: 1.1;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.choiceDelete .non:hover {
+    scale: 1.1;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.overlayDelete h2 {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5vw;
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 2vw;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*? **********************************/
+/*? **********************************/
+/*? **********************************/
+
+
+/*TODO *******************************/
+/*TODO *********** Create ************/
+/*TODO *******************************/
+
+.overlayCreate {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalCreate {
+    position: absolute;
+    left: 40%;
+    top: 15%;
+    margin: auto;
+    background-color: #252525;
+    z-index: 1;
+    padding-bottom: 3vw;
+    width: 20%;
+    margin-bottom: 1%;
+    border-radius: 5vh;
+    box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+}
+
+.modalCreate .crossCreate {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modalCreate .crossCreate:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+.modalCreate .createButton {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modalCreate .createButton:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+.modalCreate form {
+    position: relative;
+    justify-content: center;
+    margin-top: 5vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalCreate label {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+}
+
+.modalCreate input {
+    font-family: 'Roboto', sans-serif;
+    width: 10vw;
+    border-color: darkred;
+    border-style: solid;
+}
+
+.modalCreate select {
+    font-family: 'Roboto', sans-serif;
+    width: 10vw;
+    border-color: darkred;
+    border-style: solid;
+}
+
+/*TODO *******************************/
+/*TODO *******************************/
+/*TODO *******************************/
+
+
+/*! **********************************/
+/*! ****** Create New Categorie ******/
+/*! **********************************/
+
+.overlayCreateCategorie {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalCreateCategorie {
+    position: absolute;
+    left: 40%;
+    top: 25%;
+    margin: auto;
+    background-color: #252525;
+    z-index: 1;
+    padding-bottom: 3vw;
+    width: 20%;
+    margin-bottom: 1%;
+    border-radius: 5vh;
+    box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+}
+
+.modalCreateCategorie .crossCreateCategorie {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modalCreateCategorie .crossCreateCategorie:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+.modalCreateCategorie .createCategorieButton {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modalCreateCategorie .createCategorieButton:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+.modalCreateCategorie form {
+    position: relative;
+    justify-content: center;
+    margin-top: 5vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalCreateCategorie label {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+}
+
+.modalCreateCategorie input {
+    font-family: 'Roboto', sans-serif;
+    width: 10vw;
+    border-color: darkred;
+    border-style: solid;
+}
+
+/*! **********************************/
+/*! **********************************/
+/*! **********************************/
+
+
+/*? **********************************/
+/*? ********* Edit Categorie *********/
+/*? **********************************/
+
+.overlayEditCategorie {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalEditCategorie {
+    position: absolute;
+    left: 40%;
+    top: 25%;
+    margin: auto;
+    background-color: #252525;
+    z-index: 1;
+    padding-bottom: 3vw;
+    width: 20%;
+    margin-bottom: 1%;
+    border-radius: 5vh;
+    box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+}
+
+.modalEditCategorie .crossEditCategorie {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modalEditCategorie .crossEditCategorie:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+.modalEditCategorie .createEditCategorie {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modalEditCategorie .createEditCategorie:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+.modalEditCategorie form {
+    position: relative;
+    justify-content: center;
+    margin-top: 5vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalEditCategorie label {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+}
+
+.modalEditCategorie input {
+    font-family: 'Roboto', sans-serif;
+    width: 10vw;
+    border-color: darkred;
+    border-style: solid;
+}
+
+.modalEditCategorie select {
+    font-family: 'Roboto', sans-serif;
+    width: 10vw;
+    border-color: darkred;
+    border-style: solid;
+}
+
+/*? **********************************/
+/*? **********************************/
+/*? **********************************/
+
+
+/*TODO *******************************/
+/*TODO *********** No Result *********/
+/*TODO *******************************/
+
+.overlayNoResult {
+    display: none;
+    position: absolute;
+}
+
+.overlayNoResult h1 {
+    position: absolute;
+    min-width: 60vw;
+    margin-left: 25vw;
+    margin-top: 15vw;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vw;
+}
+
+.choiceAdd {
+    display: flex;
+    margin-left: 45vw;
+    margin-top: 20vw;
+    justify-content: center;
+}
+
+.choiceAdd .ouiAdd {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1vw;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.choiceAdd .nonAdd {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1vw;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.choiceAdd .ouiAdd:hover {
+    scale: 1.1;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.choiceAdd .nonAdd:hover {
+    scale: 1.1;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.choiceAdd h2 {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5vw;
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 2vw;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*TODO *******************************/
+/*TODO *******************************/
+/*TODO *******************************/
+
+
+/*! **********************************/
+/*! ******** Sort By Categorie *******/
+/*! **********************************/
+
+.overlayFilterCategories {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalFilterCategories {
+    position: absolute;
+    left: 40%;
+    top: 25%;
+    margin: auto;
+    background-color: #252525;
+    z-index: 1;
+    padding-bottom: 3vw;
+    width: 20%;
+    margin-bottom: 1%;
+    border-radius: 5vh;
+    box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+}
+
+.modalFilterCategories h1 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 1.5vw;
+    margin-top: 5vw;
+    text-align: center;
+}
+
+.modalFilterCategories .crossFilterCategories {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modalFilterCategories .crossFilterCategories:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+.modalFilterCategories form {
+    position: relative;
+    justify-content: center;
+    margin-top: 1vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalFilterCategories select {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2vw;
+    width: 10vw;
+    border-color: darkred;
+    border-style: solid;
+}
+
+.modalFilterCategories .filterCategoriesButton {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modalFilterCategories .filterCategoriesButton:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+/*! **********************************/
+/*! **********************************/
+/*! **********************************/
+
+
+/*? **********************************/
+/*? ****** Delete By Categorie *******/
+/*? **********************************/
+
+.overlayDeleteCategories {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalDeleteCategories {
+    position: absolute;
+    left: 40%;
+    top: 25%;
+    margin: auto;
+    background-color: #252525;
+    z-index: 1;
+    padding-bottom: 3vw;
+    width: 20%;
+    margin-bottom: 1%;
+    border-radius: 5vh;
+    box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+}
+
+.modalDeleteCategories h1 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 1.5vw;
+    margin-top: 5vw;
+    text-align: center;
+}
+
+.modalDeleteCategories .crossDeleteCategories {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modalDeleteCategories .crossDeleteCategories:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+.modalDeleteCategories form {
+    position: relative;
+    justify-content: center;
+    margin-top: 1vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalDeleteCategories select {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2vw;
+    width: 10vw;
+    border-color: darkred;
+    border-style: solid;
+}
+
+.modalDeleteCategories .DeleteCategoriesButton {
+    position: relative;
+    width: 2vw;
+    margin: 1vw;
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modalDeleteCategories .DeleteCategoriesButton:hover {
+    transition: all 0.5s;
+    scale: 1.2;
+}
+
+/*? **********************************/
+/*? **********************************/
+/*? **********************************/
+
+
+/*! **********************************/
+/*! *********** Keyframes ************/
+/*! **********************************/
+
+@keyframes arrivedMovies {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes departMovies {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/*! **********************************/
+/*! **********************************/
+/*! **********************************/
+
+
+@media screen and (orientation:portrait) {
+
+    /*TODO *******************************/
+    /*TODO ********** Start Menu *********/
+    /*TODO *******************************/
+    .start {
+        top: 0;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        margin-bottom: 0vw;
+        background-image: url('pictures/cinéma.png');
+        background-position: center;
+        background-size: cover;
+        z-index: 5165176;
+    }
+
+    .start h1 {
+        position: absolute;
+        font-family: 'RankedSports';
+        text-align: center;
+        color: white;
+        font-size: 7vw;
+        margin-top: 35vw;
+        margin-left: 1vw;
+    }
+
+    .start form {
+        position: absolute;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 6vw;
+        margin-top: 55vw;
+        margin-left: 24vw;
+    }
+
+    .start input {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 5vw;
+        margin-top: 2vw;
+        margin-left: 15vw;
+        width: 20vw;
+        background-color: transparent;
+    }
+
+    .start button {
+        background-color: transparent;
+        margin-top: 5vw;
+        margin-left: 13vw;
+        font-size: 9vw;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        padding: 0.5vw;
+        border-radius: 10px;
+        border-color: white;
+        transition: all 1s;
+    }
+
+    /*TODO *******************************/
+    /*TODO *******************************/
+    /*TODO *******************************/
+
+
+    /*! **********************************/
+    /*! ********** Static Menu ***********/
+    /*! **********************************/
+
+    .static {
+        display: none;
+    }
+
+    .static #mainTitle {
+        position: fixed;
+        padding-left: 20vw;
+        width: 100vw;
+        top: 0vw;
+        color: white;
+        font-size: 8vw;
+        font-family: 'RankedSports';
+        z-index: 5165165;
+        backdrop-filter: blur(10px);
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        margin-top: 20vw;
+        width: 30vw;
+        height: 75vw;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 1.5vw;
+    }
+
+    .menu #menuTitle {
+        color: white;
+        font-size: 5vw;
+        text-align: center;
+        font-family: 'RankedSports';
+    }
+
+    .menu #moviesNumber {
+        color: white;
+        font-size: 3vw;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .menu .selectors {
+        margin-top: 1vw;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 2.75vw;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .menu .gridMenu {
+        margin-left: 3.5vw;
+        margin-right: 3.5vw;
+        margin-top: 1.5vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.2vw;
+    }
+
+    .menu #searchForm {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        color: white;
+        font-size: 3vw;
+        background-color: transparent;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .menu input {
+        margin-top: 1vw;
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
+        color: white;
+        font-size: 2.75vw;
+        background-color: transparent;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .gridMenu img {
+        width: 10vw;
+        filter: invert(1);
+        transition: all 0.5s;
+    }
+
+    /*! **********************************/
+    /*! **********************************/
+    /*! **********************************/
+
+
+    /*? **********************************/
+    /*? ************* Movies *************/
+    /*? **********************************/
+
+    .movies {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.2vw;
+        margin-left: 40vw;
+        margin-right: 5vw;
+        margin-top: 20vw;
+        margin-bottom: 3.5vw;
+    }
+
+    .movie {
+        position: relative;
+        width: 24.2vw;
+        height: 30.8vw;
+        background-position: center;
+        background-size: cover;
+        transition: all 0.5s;
+        box-shadow: 0px 0px 2vh rgb(0, 0, 0);
+    }
+
+    .movie:hover {
+        box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+        transition: all 0.5s;
+        scale: 1.15;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    /*? **********************************/
+    /*? **********************************/
+    /*? **********************************/
+
+
+    /*TODO *******************************/
+    /*TODO ********** Details ************/
+    /*TODO *******************************/
+
+    .details {
+        position: fixed;
+        display: none;
+        top: 5vw;
+        left: 22vw;
+        width: 70vw;
+        height: 40vw;
+        color: white;
+        background-color: #151515;
+        box-shadow: 0px 0px 2vh rgb(0, 0, 0);
+        animation: detailsArrived 0.5;
+    }
+
+    .details .cross {
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .details .cross:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    .details h1 {
+        color: white;
+        font-size: 4vw;
+        text-align: center;
+        font-family: 'RankedSports';
+    }
+
+    .details h2 {
+        color: white;
+        font-size: 2vw;
+        font-family: 'Roboto', sans-serif;
+        margin-left: 35vw;
+        margin-right: 1vw;
+    }
+
+    .details span {
+        color: white;
+        font-size: 1.5vw;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .images {
+        display: block;
+        position: absolute;
+        width: 25.2vw;
+        height: 31.8vw;
+        background-position: center;
+        background-size: cover;
+        margin-left: 5vw;
+        box-shadow: 0px 0px 1vh rgb(255, 255, 255);
+    }
+
+    iframe {
+        position: relative;
+        margin-left: 35vw;
+        box-shadow: 0px 0px 1vh rgb(255, 255, 255);
+    }
+
+    .ButtonsDetails {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 20vw;
+        left: 65vw;
+    }
+
+    #likeSVG {
+        width: 4vw;
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    #likeSVG:hover {
+        scale: 1.2;
+        transition: all 0.5s;
+    }
+
+    #dislikeSVG {
+        width: 4vw;
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    #dislikeSVG:hover {
+        scale: 1.2;
+        transition: all 0.5s;
+    }
+
+    .like {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dislike {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .button_modal {
+        position: relative;
+        width: 4vw;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .button_modal:hover {
+        transform: scale(1.2);
+        transition: all 0.5s;
+    }
+
+    .button_deleteMovie {
+        position: relative;
+        width: 4vw;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .button_deleteMovie:hover {
+        transform: scale(1.2);
+        transition: all 0.5s;
+    }
+
+    /*TODO *******************************/
+    /*TODO *******************************/
+    /*TODO *******************************/
+
+
+    /*! **********************************/
+    /*! *********** Edit Menu ************/
+    /*! **********************************/
+
+    .overlay {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal {
+        position: absolute;
+        left: 28%;
+        top: 13%;
+        margin: auto;
+        background-color: #252525;
+        z-index: 1;
+        padding-bottom: 3vw;
+        width: 25%;
+        margin-bottom: 1%;
+        border-radius: 5vh;
+        box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+    }
+
+    .modal .cross2 {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modal .cross2:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    .modal .editButton {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modal .editButton:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    .modal form {
+        position: relative;
+        justify-content: center;
+        margin-top: 5vw;
+        margin-left: 5vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal label {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1vw;
+    }
+
+    .modal input {
+        font-family: 'Roboto', sans-serif;
+        width: 10vw;
+        border-color: darkred;
+        border-style: solid;
+    }
+
+    .modal select {
+        font-family: 'Roboto', sans-serif;
+        width: 10vw;
+        border-color: darkred;
+        border-style: solid;
+    }
+
+    /*! **********************************/
+    /*! **********************************/
+    /*! **********************************/
+
+
+    /*? **********************************/
+    /*? ************* Delete *************/
+    /*? **********************************/
+
+    .overlayDelete {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modalDelete {
+        position: absolute;
+        left: 28%;
+        top: 20%;
+        margin: auto;
+        background-color: #252525;
+        z-index: 1;
+        padding-bottom: 3vw;
+        width: 50%;
+        margin-bottom: 1%;
+        border-radius: 5vh;
+        box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+    }
+
+    .choiceDelete {
+        display: flex;
+        justify-content: center;
+    }
+
+    .choiceDelete .oui {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 1vw;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+
+    .choiceDelete .non {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 1vw;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+
+    .choiceDelete .oui:hover {
+        scale: 1.1;
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    .choiceDelete .non:hover {
+        scale: 1.1;
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    .overlayDelete h2 {
+        position: relative;
+        justify-content: center;
+        text-align: center;
+        margin-top: 5vw;
+        margin-left: 2vw;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 2vw;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /*? **********************************/
+    /*? **********************************/
+    /*? **********************************/
+
+
+    /*TODO *******************************/
+    /*TODO *********** Create ************/
+    /*TODO *******************************/
+
+    .overlayCreate {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modalCreate {
+        position: absolute;
+        left: 40%;
+        top: 15%;
+        margin: auto;
+        background-color: #252525;
+        z-index: 1;
+        padding-bottom: 3vw;
+        width: 20%;
+        margin-bottom: 1%;
+        border-radius: 5vh;
+        box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+    }
+
+    .modalCreate .crossCreate {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modalCreate .crossCreate:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    .modalCreate .createButton {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modalCreate .createButton:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    .modalCreate form {
+        position: relative;
+        justify-content: center;
+        margin-top: 5vw;
+        margin-left: 5vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modalCreate label {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1vw;
+    }
+
+    .modalCreate input {
+        font-family: 'Roboto', sans-serif;
+        width: 10vw;
+        border-color: darkred;
+        border-style: solid;
+    }
+
+    .modalCreate select {
+        font-family: 'Roboto', sans-serif;
+        width: 10vw;
+        border-color: darkred;
+        border-style: solid;
+    }
+
+    /*TODO *******************************/
+    /*TODO *******************************/
+    /*TODO *******************************/
+
+
+    /*! **********************************/
+    /*! ****** Create New Categorie ******/
+    /*! **********************************/
+
+    .overlayCreateCategorie {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modalCreateCategorie {
+        position: absolute;
+        left: 40%;
+        top: 25%;
+        margin: auto;
+        background-color: #252525;
+        z-index: 1;
+        padding-bottom: 3vw;
+        width: 20%;
+        margin-bottom: 1%;
+        border-radius: 5vh;
+        box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+    }
+
+    .modalCreateCategorie .crossCreateCategorie {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modalCreateCategorie .crossCreateCategorie:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    .modalCreateCategorie .createCategorieButton {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modalCreateCategorie .createCategorieButton:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    .modalCreateCategorie form {
+        position: relative;
+        justify-content: center;
+        margin-top: 5vw;
+        margin-left: 5vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modalCreateCategorie label {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1vw;
+    }
+
+    .modalCreateCategorie input {
+        font-family: 'Roboto', sans-serif;
+        width: 10vw;
+        border-color: darkred;
+        border-style: solid;
+    }
+
+    /*! **********************************/
+    /*! **********************************/
+    /*! **********************************/
+
+
+    /*? **********************************/
+    /*? ********* Edit Categorie *********/
+    /*? **********************************/
+
+    .overlayEditCategorie {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modalEditCategorie {
+        position: absolute;
+        left: 40%;
+        top: 25%;
+        margin: auto;
+        background-color: #252525;
+        z-index: 1;
+        padding-bottom: 3vw;
+        width: 20%;
+        margin-bottom: 1%;
+        border-radius: 5vh;
+        box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+    }
+
+    .modalEditCategorie .crossEditCategorie {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modalEditCategorie .crossEditCategorie:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    .modalEditCategorie .createEditCategorie {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modalEditCategorie .createEditCategorie:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    .modalEditCategorie form {
+        position: relative;
+        justify-content: center;
+        margin-top: 5vw;
+        margin-left: 5vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modalEditCategorie label {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1vw;
+    }
+
+    .modalEditCategorie input {
+        font-family: 'Roboto', sans-serif;
+        width: 10vw;
+        border-color: darkred;
+        border-style: solid;
+    }
+
+    .modalEditCategorie select {
+        font-family: 'Roboto', sans-serif;
+        width: 10vw;
+        border-color: darkred;
+        border-style: solid;
+    }
+
+    /*? **********************************/
+    /*? **********************************/
+    /*? **********************************/
+
+
+    /*TODO *******************************/
+    /*TODO *********** No Result *********/
+    /*TODO *******************************/
+
+    .overlayNoResult {
+        display: none;
+        position: absolute;
+    }
+
+    .overlayNoResult h1 {
+        position: absolute;
+        min-width: 60vw;
+        margin-left: 25vw;
+        margin-top: 15vw;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 2vw;
+    }
+
+    .choiceAdd {
+        display: flex;
+        margin-left: 45vw;
+        margin-top: 20vw;
+        justify-content: center;
+    }
+
+    .choiceAdd .ouiAdd {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 1vw;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+
+    .choiceAdd .nonAdd {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 1vw;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+
+    .choiceAdd .ouiAdd:hover {
+        scale: 1.1;
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    .choiceAdd .nonAdd:hover {
+        scale: 1.1;
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    .choiceAdd h2 {
+        position: relative;
+        justify-content: center;
+        text-align: center;
+        margin-top: 5vw;
+        margin-left: 2vw;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 2vw;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /*TODO *******************************/
+    /*TODO *******************************/
+    /*TODO *******************************/
+
+
+    /*! **********************************/
+    /*! ******** Sort By Categorie *******/
+    /*! **********************************/
+
+    .overlayFilterCategories {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modalFilterCategories {
+        position: absolute;
+        left: 40%;
+        top: 25%;
+        margin: auto;
+        background-color: #252525;
+        z-index: 1;
+        padding-bottom: 3vw;
+        width: 20%;
+        margin-bottom: 1%;
+        border-radius: 5vh;
+        box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+    }
+
+    .modalFilterCategories h1 {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 1.5vw;
+        margin-top: 5vw;
+        text-align: center;
+    }
+
+    .modalFilterCategories .crossFilterCategories {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modalFilterCategories .crossFilterCategories:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    .modalFilterCategories form {
+        position: relative;
+        justify-content: center;
+        margin-top: 1vw;
+        margin-left: 5vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modalFilterCategories select {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2vw;
+        width: 10vw;
+        border-color: darkred;
+        border-style: solid;
+    }
+
+    .modalFilterCategories .filterCategoriesButton {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modalFilterCategories .filterCategoriesButton:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    /*! **********************************/
+    /*! **********************************/
+    /*! **********************************/
+
+
+    /*? **********************************/
+    /*? ****** Delete By Categorie *******/
+    /*? **********************************/
+
+    .overlayDeleteCategories {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modalDeleteCategories {
+        position: absolute;
+        left: 40%;
+        top: 25%;
+        margin: auto;
+        background-color: #252525;
+        z-index: 1;
+        padding-bottom: 3vw;
+        width: 20%;
+        margin-bottom: 1%;
+        border-radius: 5vh;
+        box-shadow: 0px 0px 2vh rgb(255, 255, 255);
+    }
+
+    .modalDeleteCategories h1 {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 1.5vw;
+        margin-top: 5vw;
+        text-align: center;
+    }
+
+    .modalDeleteCategories .crossDeleteCategories {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modalDeleteCategories .crossDeleteCategories:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    .modalDeleteCategories form {
+        position: relative;
+        justify-content: center;
+        margin-top: 1vw;
+        margin-left: 5vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modalDeleteCategories select {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2vw;
+        width: 10vw;
+        border-color: darkred;
+        border-style: solid;
+    }
+
+    .modalDeleteCategories .DeleteCategoriesButton {
+        position: relative;
+        width: 2vw;
+        margin: 1vw;
+        float: right;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .modalDeleteCategories .DeleteCategoriesButton:hover {
+        transition: all 0.5s;
+        scale: 1.2;
+    }
+
+    /*? **********************************/
+    /*? **********************************/
+    /*? **********************************/
+
+
+    /*! **********************************/
+    /*! *********** Keyframes ************/
+    /*! **********************************/
+
+    @keyframes arrivedMovies {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes departMovies {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    /*! **********************************/
+    /*! **********************************/
+    /*! **********************************/
+}

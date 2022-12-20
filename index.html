@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="localApi.js"></script>
+    <title>Movies Library</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="start">
+        <h1>Bienvenue sur Movies Library</h1>
+        <form id="age">
+            <label for="ageName">Quel est votre âge ?</label><br>
+            <input type="number" name="ageInput" id="ageInput" required /><br>
+            <button class="entrer" id="submit" onclick="startPage()">Entrer</button>
+        </form>
+    </div>
+
+    <div class="static">
+        <h1 id="mainTitle">Movies Library</h1>
+        <div class="menu">
+            <h2 id="menuTitle">Menu</h2>
+            <h3 id="moviesNumber">Nombre totals de Films : <span id="number"></span></h3>
+            <div class="selectors">
+                <form id="searchForm">
+                    <label for="search">Rechercher :</label>
+                    <input type="str" name="search" id="search" onkeyup="searchFunction()" />
+                </form>
+                <div class="gridMenu">
+                    <img src="pictures/A-Z.png" class="A-Z" type="button" onclick="sortAZ()">
+                    <img src="pictures/Z-A.png" class="Z-A" type="button" onclick="sortZA()">
+                    <img src="pictures/RESET.png" class="RESET" type="button" onclick="apiChoice()">
+                    <img src="pictures/NEW-MOVIE.png" class="CreateMovies" type="button" onclick="CreateMovie()">
+                    <img src="pictures/NEW-CATEGORY.png" class="CreateCategorie" type="button" onclick="CreateCategorie()">
+                    <img src="pictures/EDIT-CATEGORY.png" class="EditCategorie" type="button" onclick="EditCategorie()">
+                    <img src="pictures/FILTER-BY-CATEGORY.png" class="FilterCatégorie" type="button" onclick="sortCategories()">
+                    <img src="pictures/DELETE-CATEGORY.png" class="DeleteCategorie" type="button" onclick="deleteCategories()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="movies">
+
+    </div>
+
+    <div class="details">
+        <img class="cross" src="pictures/cross_white.svg">
+        <h1 class="movie_title"></h1><br><br>
+        <span class="images"></span>
+        <h2><u>Auteur :</u> <span class="author"></span></h2><br><br><br>
+        <h2><u>Description :</u> <span class="description"></span></h2><br><br><br>
+        <h2><u>Categorie :</u> <span class="category"></span></h2><br><br><br>
+        <iframe style="width: 23vw; height: 13vw;" width="358.4" height="201.6" src="" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <div class="ButtonsDetails">
+            <img class="button_modal" class="edit" src="pictures/edit.svg">
+            <img class="button_deleteMovie" id="delete" onclick="deleteMovie()" src="pictures/trash.svg">
+            <div class="like">
+                <img src="pictures/like.svg" id="likeSVG">
+                <span class="likes"></span>
+            </div>
+            <div class="dislike">
+                <img src="pictures/dislike.svg" id="dislikeSVG">
+                <span class="dislikes"></span>
+            </div>
+        </div>
+        <div class="overlay">
+            <div class="modal">
+                <img class="cross2" src="pictures/cross_white.svg">
+                <form id="edit">
+                    <label for="modalName">Nom du Film</label><br>
+                    <input type="str" name="modalName" id="modalName" required maxlength="40" /><br>
+
+                    <label for="modalAuthor">Nom de l'auteur</label><br>
+                    <input type="str" name="modalAuthor" id="modalAuthor" required maxlength="40" /><br>
+
+                    <label for="modalDescription">Description</label><br>
+                    <input type="str" name="modalDescription" id="modalDescription" required /><br>
+
+                    <label for="modalCategory">Catégories</label><br>
+                    <select name="modalCategory" id="modalCategory" required>
+                    </select><br>
+
+                    <label for="modalVideo">Lien de la vidéo</label><br>
+                    <input type="str" name="modalVideo" id="modalVideo" required maxlength="200" /><br>
+
+                    <label for="modalImage">Lien de l'image</label><br>
+                    <input type="str" name="modalImage" id="modalImage" required maxlength="200" /><br>
+                </form>
+                <img class="editButton" src="pictures/edit.svg" onclick="editInfoOnClick()">
+            </div>
+        </div>
+        <div class="overlayDelete">
+            <div class="modalDelete">
+                <h2>Etes vous sur de vouloir supprimer ce film ?</h2>
+                <div class="choiceDelete">
+                    <h2 class="oui" onclick="deleteMovieYes()">OUI</h2>
+                    <h2 class="non" onclick="deleteMovieNo()">NON</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlayCreate">
+        <div class="modalCreate">
+            <img class="crossCreate" src="pictures/cross_white.svg">
+            <form id="Create">
+                <label for="modalNameCreate">Nom du Film</label><br>
+                <input type="str" name="modalNameCreate" id="modalNameCreate" required maxlength="40" /><br>
+
+                <label for="modalAuthorCreate">Nom de l'auteur</label><br>
+                <input type="str" name="modalAuthorCreate" id="modalAuthorCreate" required maxlength="40" /><br>
+
+                <label for="modalDescriptionCreate">Description</label><br>
+                <input type="str" name="modalDescriptionCreate" id="modalDescriptionCreate" required
+                    maxlength="120" /><br>
+
+                <label for="modalCategoryCreate">Catégories</label><br>
+                <select name="modalCategoryCreate" id="modalCategoryCreate" required>
+                </select><br>
+
+                <label for="modalVideoCreate">Lien de la vidéo</label><br>
+                <input type="str" name="modalVideoCreate" id="modalVideoCreate" required maxlength="200" /><br>
+
+                <label for="modalImageCreate">Lien de l'image</label><br>
+                <input type="str" name="modalImageCreate" id="modalImageCreate" required maxlength="200" /><br>
+            </form>
+            <img class="createButton" src="pictures/edit.svg" onclick="CreateMovieOnClick()">
+        </div>
+    </div>
+
+    <div class="overlayCreateCategorie">
+        <div class="modalCreateCategorie">
+            <img class="crossCreateCategorie" src="pictures/cross_white.svg">
+            <form id="CreateCategorie">
+                <label for="modalNameCreateCategories">Nom de la Catégorie</label><br>
+                <input type="str" name="modalNameCreateCategorie" id="modalNameCreateCategorie" required
+                    maxlength="40" /><br>
+            </form>
+            <img class="createCategorieButton" src="pictures/edit.svg" onclick="CreateCategorieOnClick()">
+        </div>
+    </div>
+
+    <div class="overlayEditCategorie">
+        <div class="modalEditCategorie">
+            <img class="crossEditCategorie" src="pictures/cross_white.svg">
+            <form id="EditCategorie">
+                <label for="modalNameEditCategorie">Nouveau nom de la Catégorie</label><br>
+                <input type="str" name="modalNameEditCategorie" id="modalNameEditCategorie" required
+                    maxlength="40" /><br>
+                <label for="modalCategories">Catégories</label><br>
+                <select name="modalCategories" id="modalCategories" required>
+                </select><br>
+            </form>
+            <img class="createEditCategorie" src="pictures/edit.svg" onclick="EditCategorieOnClick()">
+        </div>
+    </div>
+
+    <div class="overlayNoResult">
+        <h1>Le Film que vous rechercher n'existe pas. Souhaitez-vous le créer ?</h1>
+        <div class="choiceAdd">
+            <h2 class="ouiAdd" onclick="yesadd()">OUI</h2>
+            <h2 class="nonAdd" onclick="noadd()">NON</h2>
+        </div>
+    </div>
+
+    <div class="overlayFilterCategories">
+        <div class="modalFilterCategories">
+            <img class="crossFilterCategories" src="pictures/cross_white.svg">
+            <h1>Avec quelle catégories souhaitez vous filtrer ?</h1>
+            <form>
+                <select name="choiceFilterCategories" id="choiceFilterCategories" required>
+                </select>
+            </form>
+            <img class="filterCategoriesButton" src="pictures/edit.svg" onclick="sortCategoriesOnClick()">
+        </div>
+    </div>
+
+    <div class="overlayDeleteCategories">
+        <div class="modalDeleteCategories">
+            <img class="crossDeleteCategories" src="pictures/cross_white.svg">
+            <h1>Quelle catégories souhaitez vous supprimer ?</h1>
+            <form>
+                <select name="choiceDeleteCategories" id="choiceDeleteCategories" required>
+                </select>
+            </form>
+            <img class="DeleteCategoriesButton" src="pictures/edit.svg" onclick="deleteCategoriesOnClick()">
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
