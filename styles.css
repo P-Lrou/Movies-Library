@@ -1287,9 +1287,9 @@ iframe {
     .menu {
         position: fixed;
         top: 0;
-        margin-top: 10vw;
+        margin-top: 20vw;
         width: 30vw;
-        height: 200vw;
+        height: 90vw;
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 1.5vw;
     }
@@ -1318,11 +1318,11 @@ iframe {
     }
 
     .menu .gridMenu {
-        margin-left: 7vw;
+        margin-left: 3.5vw;
         margin-right: 3.5vw;
         margin-top: 3.5vw;
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 1.2vw;
     }
 
@@ -1347,7 +1347,7 @@ iframe {
     }
 
     .gridMenu img {
-        width: 15vw;
+        width: 10vw;
         margin-bottom: 1vw;
         filter: invert(1);
         transition: all 0.5s;
@@ -1366,7 +1366,7 @@ iframe {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1.2vw;
-        margin-left: 35vw;
+        margin-left: 32vw;
         margin-right: 5vw;
         margin-top: 20vw;
         margin-bottom: 3.5vw;
