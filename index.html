@@ -24,7 +24,11 @@
     </div>
 
     <div class="static">
-        <h1 id="mainTitle">Movies Library</h1>
+        <label class="switch">
+            <input type="checkbox" onclick="switchMode()">
+            <span class="slider round"></span>
+        </label>
+        <h1 id="mainTitle">Movies Library<span class="modeName"></span></h1>
         <div class="menu">
             <h2 id="menuTitle">Menu</h2>
             <h3 id="moviesNumber">Nombre totals de Films : <span id="number"></span></h3>
@@ -38,15 +42,21 @@
                     <img src="pictures/Z-A.png" class="Z-A" type="button" onclick="sortZA()">
                     <img src="pictures/RESET.png" class="RESET" type="button" onclick="apiChoice()">
                     <img src="pictures/NEW-MOVIE.png" class="CreateMovies" type="button" onclick="CreateMovie()">
-                    <img src="pictures/NEW-CATEGORY.png" class="CreateCategorie" type="button" onclick="CreateCategorie()">
+                    <img src="pictures/NEW-CATEGORY.png" class="CreateCategorie" type="button"
+                        onclick="CreateCategorie()">
                     <img src="pictures/EDIT-CATEGORY.png" class="EditCategorie" type="button" onclick="EditCategorie()">
-                    <img src="pictures/FILTER-BY-CATEGORY.png" class="FilterCatégorie" type="button" onclick="sortCategories()">
-                    <img src="pictures/DELETE-CATEGORY.png" class="DeleteCategorie" type="button" onclick="deleteCategories()">
+                    <img src="pictures/FILTER-BY-CATEGORY.png" class="FilterCatégorie" type="button"
+                        onclick="sortCategories()">
+                    <img src="pictures/DELETE-CATEGORY.png" class="DeleteCategorie" type="button"
+                        onclick="deleteCategories()">
                     <img src="pictures/FILTER-BY-LIKES.png" class="FilterLikes" type="button" onclick="sortLikes()">
-                    <img src="pictures/FILTER-BY-DISLIKES.png" class="FilterDislikes" type="button" onclick="sortDislikes()">
+                    <img src="pictures/FILTER-BY-DISLIKES.png" class="FilterDislikes" type="button"
+                        onclick="sortDislikes()">
                 </div>
             </div>
         </div>
+        <img class="arrows" id="arrowLeft" src="pictures/arrow_white.svg">
+        <img class="arrows" id="arrowRigth" src="pictures/arrow_white.svg">
     </div>
 
     <div class="movies">
@@ -54,7 +64,7 @@
     </div>
 
     <div class="details">
-        <img class="cross" src="pictures/cross_white.svg">
+        <img class="cross" src="pictures/cross_white.svg" onclick="closeInfo()">
         <h1 class="movie_title"></h1><br><br>
         <span class="images"></span>
         <h2><u>Auteur :</u> <span class="author"></span><br><u>Ratio :</u> <span class="ratio"></span></h2><br><br><br>

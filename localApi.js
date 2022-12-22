@@ -1062,7 +1062,6 @@ const moviesApi = [{
     "description": "Quatre garnements ont réussi à assister à la projection d'un film canadien de Terance et Phillip."
 }]
 
-
 const categoriesApi = [{
     "id": "4sSKW4wg50CYFwvX8sHd",
     "name": "Perfection"

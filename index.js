@@ -1,12 +1,30 @@
 "use strict"
 
-let online = true
+
+//TODO *****************************/
+//TODO ** Variable Initialisation **/
+//TODO *****************************/
+
+//#region Variable Initialisation
+let online = false
 let moviesApiStock = null
 let categoriesApiStock = null
 let details = document.querySelector('.details')
 let tempEdit = null
 let tempDelete = null
 let adult = false
+let moviesSection = document.querySelector('.movies')
+let limit = null
+let maxMovie = 12
+if (window.matchMedia("(width < 600px)").matches) {
+    maxMovie = 6
+}
+let distance = 0
+//#endregion
+
+//TODO *****************************/
+//TODO *****************************/
+//TODO *****************************/
 
 
 //! ********************************/
@@ -33,12 +51,15 @@ const startPage = () => {
 }
 
 const apiChoice = () => {
+    let modeName = document.querySelector('.modeName')
     if (online) {
         console.log('ONLINE')
+        modeName.innerHTML = 'Online'
         apiOnline()
     }
     if (!online) {
         console.log('OFFLINE')
+        modeName.innerHTML = 'Offline'
         apiLocal()
     }
 }
@@ -58,12 +79,29 @@ const apiOnline = () => {
 const apiLocal = () => {
     moviesApiStock = moviesApi
     categoriesApiStock = categoriesApi
+    if (!localStorage.getItem(`moviesApiStock`)) {
+        localStorage.setItem(`moviesApiStock`, JSON.stringify(moviesApiStock))
+    }
+    if (!localStorage.getItem(`categoriesApiStock`)) {
+        localStorage.setItem(`categoriesApiStock`, JSON.stringify(categoriesApiStock))
+    }
+    moviesApiStock = JSON.parse(localStorage.getItem(`moviesApiStock`))
+    categoriesApiStock = JSON.parse(localStorage.getItem(`categoriesApiStock`))
     createMovies(moviesApiStock)
 }
 
 const createMovies = (ActualMovies) => {
+    let moviesHTML = document.querySelector('.movies')
+    let newSection = document.createElement('div')
+    let i = 0
+    if (!online) {
+        localStorage.setItem(`moviesApiStock`, JSON.stringify(moviesApiStock))
+        localStorage.setItem(`categoriesApiStock`, JSON.stringify(categoriesApiStock))
+        moviesApiStock = JSON.parse(localStorage.getItem(`moviesApiStock`))
+        categoriesApiStock = JSON.parse(localStorage.getItem(`categoriesApiStock`))
+    }
     document.querySelector('.static').style.display = "block"
-    document.querySelector('.movies').style.display = "grid"
+    document.querySelector('.movies').style.display = "flex"
     document.querySelector('.details').style.display = "none"
     document.querySelector('.overlayFilterCategories').style.display = "none"
     document.querySelector('.overlayCreate').style.display = "none"
@@ -73,29 +111,54 @@ const createMovies = (ActualMovies) => {
     document.querySelector('.overlayDeleteCategories').style.display = "none"
     setTimeout(() => {
         gsap.to(".start", { y: -1000, duration: 2 });
-        // document.querySelector('.start').style.display = "none"
     }, 1000);
     setTimeout(() => {
         document.querySelector('.start').style.display = "none"
-        document.getElementsByTagName('body')[0].style.overflowY = 'scroll';
     }, 3000);
-    let moviesHTML = document.querySelector('.movies')
-    moviesHTML.innerHTML = ''
-    for (let i = 0; i < ActualMovies.length; i++) {
-        let newElt = document.createElement('div')
-        newElt.classList.add("movie");
-        newElt.setAttribute('id', ActualMovies[i].id);
-        if (adult === false && ActualMovies[i].category === "R7njrf6DPHVvNRLpz4P0") {
-            newElt.style.backgroundImage = `url(https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80)`
-        }
-        else {
-            newElt.style.backgroundImage = `url(${ActualMovies[i].img})`;
-        }
-        moviesHTML.appendChild(newElt)
+    reset()
+    gsap.to(".movies", { x: `0vw`, duration: 1 });
+    if (distance === 0) {
+        document.querySelector('#arrowLeft').style.display = "none"
+        document.querySelector('#arrowRigth').style.display = "block"
     }
+    newSection.classList.add("section");
+    moviesHTML.appendChild(newSection)
+    sectionCreation(ActualMovies, i)
     document.querySelector('#number').innerHTML = ActualMovies.length
     document.querySelector('.movies').style.animation = "arrivedMovies 1s"
+    limit = - document.querySelectorAll('.section').length
+    if (limit === -1) {
+        document.querySelector('#arrowRigth').style.display = "none"
+    }
     changeInfo(ActualMovies)
+}
+
+const reset = () => {
+    document.querySelector('.movies').innerHTML = ''
+    limit = 0
+    distance = 0
+}
+
+const sectionCreation = (tab_temp, i) => {
+    for (let v = 0; v < tab_temp.length; v++) {
+        i++
+        let tempSection = document.querySelectorAll('.section')
+        let actualSection = tempSection[tempSection.length - 1]
+        let newElt = document.createElement('div')
+        newElt.classList.add("movie");
+        newElt.setAttribute('id', tab_temp[v].id);
+        newElt.style.backgroundImage = `url(${tab_temp[v].img})`;
+        if (adult === false && tab_temp[v].category === "R7njrf6DPHVvNRLpz4P0") {
+            newElt.style.backgroundImage = `url(https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80)`
+        }
+        actualSection.appendChild(newElt)
+        if (i === maxMovie) {
+            i = 0
+            let newSection = document.createElement('div')
+            newSection.classList.add("section");
+            moviesSection.appendChild(newSection)
+        }
+    }
 }
 //#endregion
 
@@ -125,6 +188,8 @@ const changeInfo = (ActualMovies) => {
             details.style.display = "block"
             gsap.from(".details", { x: 2500, duration: 0.5 });
             document.querySelector('.movies').style.animation = "departMovies 1s"
+            document.querySelector('#arrowLeft').style.display = "none"
+            document.querySelector('#arrowRigth').style.display = "none"
             setTimeout(() => {
                 document.querySelector('.movies').style.display = "none"
             }, 1000);
@@ -254,7 +319,18 @@ const closeInfo = () => {
     cross.addEventListener('click', () => {
         gsap.to(".details", { x: 2500, duration: 0.5 });
         document.querySelector('.movies').style.animation = "arrivedMovies 1s"
-        document.querySelector('.movies').style.display = "grid"
+        document.querySelector('.movies').style.display = "flex"
+        document.querySelector('#arrowLeft').style.display = "block"
+        document.querySelector('#arrowRigth').style.display = "block"
+        if (distance === 0) {
+            document.querySelector('#arrowLeft').style.display = "none"
+        }
+        if (limit === -1) {
+            document.querySelector('#arrowRigth').style.display = "none"
+        }
+        if (distance - 100 === limit * 100) {
+            document.querySelector('#arrowRigth').style.display = "none"
+        }
         setTimeout(() => {
             details.style.display = "none"
             gsap.to(".details", { x: 0, duration: 0.5 });
@@ -376,14 +452,9 @@ const deleteMovieYes = () => {
 }
 
 const deleteMovieNo = () => {
+    createMovies(moviesApiStock)
     let overlayDelete = document.querySelector('.overlayDelete')
-    let movie = document.querySelectorAll('.movie')
-    details.style.display = "none"
     overlayDelete.style.display = "none"
-    movie.forEach(elm => {
-        elm.style.display = "block"
-    })
-    document.querySelector('.movies').style.animation = "arrivedMovies 1s"
 }
 
 const CategoriesEditDetails = (actualCategory) => {
@@ -425,12 +496,14 @@ const searchFunction = () => {
     const formData = new FormData(searchForm);
     let search = formData.get('search')
     moviesApiStock.filter(movie => {
-        if (movie.name.toUpperCase().includes(search.toUpperCase()) || movie.author.toUpperCase().includes(search.toUpperCase()) ||movie.description.toUpperCase().includes(search.toUpperCase())) {
+        if (movie.name.toUpperCase().includes(search.toUpperCase()) || movie.author.toUpperCase().includes(search.toUpperCase()) || movie.description.toUpperCase().includes(search.toUpperCase())) {
             stock.push(movie)
         }
     })
     if (search.length > 0 && stock.length === 0) {
         document.querySelector('.overlayNoResult').style.display = "block"
+        document.querySelector('#arrowLeft').style.display = "none"
+        document.querySelector('#arrowRigth').style.display = "none"
         document.querySelector('.movies').style.display = "none"
         return
     }
@@ -875,4 +948,58 @@ const CategoriesEditCreate = () => {
 //TODO *****************************/
 //TODO *****************************/
 
-closeInfo()
+
+//! ********************************/
+//! ********** Switch Mode *********/
+//! ********************************/
+
+//#region Switch Mode
+const switchMode = () => {
+    if (online === true) {
+        online = false
+        apiChoice()
+    }
+    else {
+        online = true
+        apiChoice()
+    }
+}
+//#endregion
+
+//! ********************************/
+//! ********************************/
+//! ********************************/
+
+
+//? ********************************/
+//? ************ Arrows ************/
+//? ********************************/
+
+//#region Arrows
+document.querySelector('#arrowRigth').addEventListener('click', () => {
+    distance = distance - 100
+    gsap.to(".movies", { x: `${distance}vw`, duration: 1 });
+    if (distance < 0) {
+        document.querySelector('#arrowLeft').style.display = "block"
+    }
+    if (distance - 100 === limit * 100) {
+        document.querySelector('#arrowRigth').style.display = "none"
+    }
+})
+
+document.querySelector('#arrowLeft').addEventListener('click', () => {
+    distance = distance + 100
+    gsap.to(".movies", { x: `${distance}vw`, duration: 1 });
+    console.log(distance)
+    if (distance === 0) {
+        document.querySelector('#arrowLeft').style.display = "none"
+    }
+    if (distance - 100 > limit * 100) {
+        document.querySelector('#arrowRigth').style.display = "block"
+    }
+})
+//#endregion
+
+//? ********************************/
+//? ********************************/
+//? ********************************/
