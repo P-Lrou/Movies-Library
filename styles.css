@@ -1470,7 +1470,8 @@ input:checked+.slider:before {
         width: 10vw;
         margin-bottom: 1vw;
         filter: invert(1);
-        transition: all 0.5s;;
+        transition: all 0.5s;
+        ;
     }
 
     .gridMenu img:hover {
@@ -1705,44 +1706,34 @@ input:checked+.slider:before {
 
     .modal {
         position: absolute;
-        left: 28%;
-        top: 13%;
+        left: 20%;
+        top: 8%;
         margin: auto;
         background-color: #252525;
         z-index: 1;
         padding-bottom: 3vw;
-        width: 25%;
+        width: 50%;
         margin-bottom: 1%;
-        border-radius: 5vh;
+        border-radius: 2vh;
         box-shadow: 0px 0px 2vh rgb(255, 255, 255);
     }
 
     .modal .cross2 {
         position: relative;
-        width: 2vw;
-        margin: 1vw;
+        width: 5vw;
+        margin: 2vw;
         float: right;
         cursor: pointer;
         transition: all 0.5s;
-    }
-
-    .modal .cross2:hover {
-        transition: all 0.5s;
-        scale: 1.2;
     }
 
     .modal .editButton {
         position: relative;
-        width: 2vw;
-        margin: 1vw;
+        width: 5vw;
+        margin: 2vw;
         float: right;
         cursor: pointer;
         transition: all 0.5s;
-    }
-
-    .modal .editButton:hover {
-        transition: all 0.5s;
-        scale: 1.2;
     }
 
     .modal form {
@@ -1757,19 +1748,20 @@ input:checked+.slider:before {
     .modal label {
         color: white;
         font-family: 'Roboto', sans-serif;
-        font-size: 1vw;
+        font-size: 2.5vw;
     }
 
     .modal input {
+        font-size: 2.2vw;
         font-family: 'Roboto', sans-serif;
-        width: 10vw;
+        width: 20vw;
         border-color: darkred;
         border-style: solid;
     }
 
     .modal select {
         font-family: 'Roboto', sans-serif;
-        width: 10vw;
+        width: 20vw;
         border-color: darkred;
         border-style: solid;
     }
@@ -1795,13 +1787,13 @@ input:checked+.slider:before {
 
     .modalDelete {
         position: absolute;
-        left: 28%;
+        left: 18%;
         top: 20%;
         margin: auto;
         background-color: #252525;
         z-index: 1;
         padding-bottom: 3vw;
-        width: 50%;
+        width: 75%;
         margin-bottom: 1%;
         border-radius: 5vh;
         box-shadow: 0px 0px 2vh rgb(255, 255, 255);
@@ -1847,7 +1839,7 @@ input:checked+.slider:before {
         display: flex;
         flex-direction: column;
         color: white;
-        font-size: 2vw;
+        font-size: 4vw;
         font-family: 'Roboto', sans-serif;
     }
 
@@ -1879,38 +1871,28 @@ input:checked+.slider:before {
         background-color: #252525;
         z-index: 1;
         padding-bottom: 3vw;
-        width: 20%;
+        width: 50%;
         margin-bottom: 1%;
-        border-radius: 5vh;
+        border-radius: 2vh;
         box-shadow: 0px 0px 2vh rgb(255, 255, 255);
     }
 
     .modalCreate .crossCreate {
         position: relative;
-        width: 2vw;
-        margin: 1vw;
+        width: 5vw;
+        margin: 2vw;
         float: right;
         cursor: pointer;
         transition: all 0.5s;
-    }
-
-    .modalCreate .crossCreate:hover {
-        transition: all 0.5s;
-        scale: 1.2;
     }
 
     .modalCreate .createButton {
         position: relative;
-        width: 2vw;
-        margin: 1vw;
+        width: 5vw;
+        margin: 2vw;
         float: right;
         cursor: pointer;
         transition: all 0.5s;
-    }
-
-    .modalCreate .createButton:hover {
-        transition: all 0.5s;
-        scale: 1.2;
     }
 
     .modalCreate form {
@@ -1925,19 +1907,20 @@ input:checked+.slider:before {
     .modalCreate label {
         color: white;
         font-family: 'Roboto', sans-serif;
-        font-size: 1vw;
+        font-size: 2.5vw;
     }
 
     .modalCreate input {
+        font-size: 2.2vw;
         font-family: 'Roboto', sans-serif;
-        width: 10vw;
+        width: 35vw;
         border-color: darkred;
         border-style: solid;
     }
 
     .modalCreate select {
         font-family: 'Roboto', sans-serif;
-        width: 10vw;
+        width: 35vw;
         border-color: darkred;
         border-style: solid;
     }
@@ -1965,43 +1948,33 @@ input:checked+.slider:before {
     .modalCreateCategorie {
         position: absolute;
         left: 40%;
-        top: 25%;
+        top: 15%;
         margin: auto;
         background-color: #252525;
         z-index: 1;
         padding-bottom: 3vw;
-        width: 20%;
+        width: 50%;
         margin-bottom: 1%;
-        border-radius: 5vh;
+        border-radius: 2vh;
         box-shadow: 0px 0px 2vh rgb(255, 255, 255);
     }
 
     .modalCreateCategorie .crossCreateCategorie {
         position: relative;
-        width: 2vw;
-        margin: 1vw;
+        width: 5vw;
+        margin: 2vw;
         float: right;
         cursor: pointer;
         transition: all 0.5s;
-    }
-
-    .modalCreateCategorie .crossCreateCategorie:hover {
-        transition: all 0.5s;
-        scale: 1.2;
     }
 
     .modalCreateCategorie .createCategorieButton {
         position: relative;
-        width: 2vw;
-        margin: 1vw;
+        width: 5vw;
+        margin: 2vw;
         float: right;
         cursor: pointer;
         transition: all 0.5s;
-    }
-
-    .modalCreateCategorie .createCategorieButton:hover {
-        transition: all 0.5s;
-        scale: 1.2;
     }
 
     .modalCreateCategorie form {
@@ -2016,12 +1989,20 @@ input:checked+.slider:before {
     .modalCreateCategorie label {
         color: white;
         font-family: 'Roboto', sans-serif;
-        font-size: 1vw;
+        font-size: 2.5vw;
     }
 
     .modalCreateCategorie input {
+        font-size: 2.2vw;
         font-family: 'Roboto', sans-serif;
-        width: 10vw;
+        width: 35vw;
+        border-color: darkred;
+        border-style: solid;
+    }
+
+    .modalCreateCategorie select {
+        font-family: 'Roboto', sans-serif;
+        width: 35vw;
         border-color: darkred;
         border-style: solid;
     }
@@ -2049,43 +2030,33 @@ input:checked+.slider:before {
     .modalEditCategorie {
         position: absolute;
         left: 40%;
-        top: 25%;
+        top: 15%;
         margin: auto;
         background-color: #252525;
         z-index: 1;
         padding-bottom: 3vw;
-        width: 20%;
+        width: 50%;
         margin-bottom: 1%;
-        border-radius: 5vh;
+        border-radius: 2vh;
         box-shadow: 0px 0px 2vh rgb(255, 255, 255);
     }
 
     .modalEditCategorie .crossEditCategorie {
         position: relative;
-        width: 2vw;
-        margin: 1vw;
+        width: 5vw;
+        margin: 2vw;
         float: right;
         cursor: pointer;
         transition: all 0.5s;
-    }
-
-    .modalEditCategorie .crossEditCategorie:hover {
-        transition: all 0.5s;
-        scale: 1.2;
     }
 
     .modalEditCategorie .createEditCategorie {
         position: relative;
-        width: 2vw;
-        margin: 1vw;
+        width: 5vw;
+        margin: 2vw;
         float: right;
         cursor: pointer;
         transition: all 0.5s;
-    }
-
-    .modalEditCategorie .createEditCategorie:hover {
-        transition: all 0.5s;
-        scale: 1.2;
     }
 
     .modalEditCategorie form {
@@ -2100,19 +2071,20 @@ input:checked+.slider:before {
     .modalEditCategorie label {
         color: white;
         font-family: 'Roboto', sans-serif;
-        font-size: 1vw;
+        font-size: 2.5vw;
     }
 
     .modalEditCategorie input {
+        font-size: 2.2vw;
         font-family: 'Roboto', sans-serif;
-        width: 10vw;
+        width: 35vw;
         border-color: darkred;
         border-style: solid;
     }
 
     .modalEditCategorie select {
         font-family: 'Roboto', sans-serif;
-        width: 10vw;
+        width: 35vw;
         border-color: darkred;
         border-style: solid;
     }
@@ -2134,44 +2106,33 @@ input:checked+.slider:before {
     .overlayNoResult h1 {
         position: absolute;
         min-width: 60vw;
-        margin-left: 25vw;
-        margin-top: 15vw;
+        margin-left: 35vw;
+        margin-top: 25vw;
         color: white;
         font-family: 'Roboto', sans-serif;
-        font-size: 2vw;
+        font-size: 5vw;
+        text-align: center;
     }
 
     .choiceAdd {
         display: flex;
-        margin-left: 45vw;
-        margin-top: 20vw;
+        margin-left: 48vw;
+        margin-top: 40vw;
         justify-content: center;
     }
 
     .choiceAdd .ouiAdd {
         background-color: rgba(0, 0, 0, 0.5);
-        padding: 1vw;
+        padding: 2vw;
         border-radius: 10px;
         transition: all 0.5s;
     }
 
     .choiceAdd .nonAdd {
         background-color: rgba(0, 0, 0, 0.5);
-        padding: 1vw;
+        padding: 2vw;
         border-radius: 10px;
         transition: all 0.5s;
-    }
-
-    .choiceAdd .ouiAdd:hover {
-        scale: 1.1;
-        transition: all 0.5s;
-        cursor: pointer;
-    }
-
-    .choiceAdd .nonAdd:hover {
-        scale: 1.1;
-        transition: all 0.5s;
-        cursor: pointer;
     }
 
     .choiceAdd h2 {
@@ -2183,7 +2144,7 @@ input:checked+.slider:before {
         display: flex;
         flex-direction: column;
         color: white;
-        font-size: 2vw;
+        font-size: 5vw;
         font-family: 'Roboto', sans-serif;
     }
 
@@ -2210,68 +2171,58 @@ input:checked+.slider:before {
     .modalFilterCategories {
         position: absolute;
         left: 40%;
-        top: 25%;
+        top: 15%;
         margin: auto;
         background-color: #252525;
         z-index: 1;
         padding-bottom: 3vw;
-        width: 20%;
+        width: 50%;
         margin-bottom: 1%;
-        border-radius: 5vh;
+        border-radius: 2vh;
         box-shadow: 0px 0px 2vh rgb(255, 255, 255);
-    }
-
-    .modalFilterCategories h1 {
-        font-family: 'Roboto', sans-serif;
-        color: white;
-        font-size: 1.5vw;
-        margin-top: 5vw;
-        text-align: center;
     }
 
     .modalFilterCategories .crossFilterCategories {
         position: relative;
-        width: 2vw;
-        margin: 1vw;
+        width: 5vw;
+        margin: 2vw;
         float: right;
         cursor: pointer;
         transition: all 0.5s;
     }
 
-    .modalFilterCategories .crossFilterCategories:hover {
+    .modalFilterCategories .filterCategoriesButton {
+        position: relative;
+        width: 5vw;
+        margin: 2vw;
+        float: right;
+        cursor: pointer;
         transition: all 0.5s;
-        scale: 1.2;
+    }
+
+    .modalFilterCategories h1 {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 3vw;
+        margin-top: 5vw;
+        text-align: center;
     }
 
     .modalFilterCategories form {
         position: relative;
         justify-content: center;
-        margin-top: 1vw;
+        margin-top: 5vw;
         margin-left: 5vw;
         display: flex;
         flex-direction: column;
     }
 
     .modalFilterCategories select {
+        font-size: 2.5vw;
         font-family: 'Roboto', sans-serif;
-        font-size: 1.2vw;
-        width: 10vw;
+        width: 35vw;
         border-color: darkred;
         border-style: solid;
-    }
-
-    .modalFilterCategories .filterCategoriesButton {
-        position: relative;
-        width: 2vw;
-        margin: 1vw;
-        float: right;
-        cursor: pointer;
-        transition: all 0.5s;
-    }
-
-    .modalFilterCategories .filterCategoriesButton:hover {
-        transition: all 0.5s;
-        scale: 1.2;
     }
 
     /*! **********************************/
@@ -2297,68 +2248,58 @@ input:checked+.slider:before {
     .modalDeleteCategories {
         position: absolute;
         left: 40%;
-        top: 25%;
+        top: 15%;
         margin: auto;
         background-color: #252525;
         z-index: 1;
         padding-bottom: 3vw;
-        width: 20%;
+        width: 50%;
         margin-bottom: 1%;
-        border-radius: 5vh;
+        border-radius: 2vh;
         box-shadow: 0px 0px 2vh rgb(255, 255, 255);
-    }
-
-    .modalDeleteCategories h1 {
-        font-family: 'Roboto', sans-serif;
-        color: white;
-        font-size: 1.5vw;
-        margin-top: 5vw;
-        text-align: center;
     }
 
     .modalDeleteCategories .crossDeleteCategories {
         position: relative;
-        width: 2vw;
-        margin: 1vw;
+        width: 5vw;
+        margin: 2vw;
         float: right;
         cursor: pointer;
         transition: all 0.5s;
     }
 
-    .modalDeleteCategories .crossDeleteCategories:hover {
+    .modalDeleteCategories .DeleteCategoriesButton {
+        position: relative;
+        width: 5vw;
+        margin: 2vw;
+        float: right;
+        cursor: pointer;
         transition: all 0.5s;
-        scale: 1.2;
+    }
+
+    .modalDeleteCategories h1 {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 3vw;
+        margin-top: 5vw;
+        text-align: center;
     }
 
     .modalDeleteCategories form {
         position: relative;
         justify-content: center;
-        margin-top: 1vw;
+        margin-top: 5vw;
         margin-left: 5vw;
         display: flex;
         flex-direction: column;
     }
 
     .modalDeleteCategories select {
+        font-size: 2.5vw;
         font-family: 'Roboto', sans-serif;
-        font-size: 1.2vw;
-        width: 10vw;
+        width: 35vw;
         border-color: darkred;
         border-style: solid;
-    }
-
-    .modalDeleteCategories .DeleteCategoriesButton {
-        position: relative;
-        width: 2vw;
-        margin: 1vw;
-        float: right;
-        cursor: pointer;
-        transition: all 0.5s;
-    }
-
-    .modalDeleteCategories .DeleteCategoriesButton:hover {
-        transition: all 0.5s;
-        scale: 1.2;
     }
 
     /*? **********************************/
@@ -2408,6 +2349,7 @@ input:checked+.slider:before {
         display: inline-block;
         width: 60px;
         height: 34px;
+        transform: scale(0.7);
     }
 
     .switch input {
