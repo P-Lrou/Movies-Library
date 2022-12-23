@@ -1012,24 +1012,3 @@ document.querySelector('#arrowLeft').addEventListener('click', () => {
 //? ********************************/
 //? ********************************/
 //? ********************************/
-
-//TODO *****************************/
-//TODO *** Change Section Number ***/
-//TODO *****************************/
-
-//#region Change Section Number
-window.addEventListener('resize', () => {
-    if (window.matchMedia("(width < 600px)").matches) {
-        maxMovie = 6
-        createMovies(moviesApiStock)
-    }
-    if (window.matchMedia("(width > 600px)").matches) {
-        maxMovie = 12
-        createMovies(moviesApiStock)
-    }
-});
-//#endregion
-
-//TODO *****************************/
-//TODO *****************************/
-//TODO *****************************/
