@@ -1,6 +1,6 @@
 "use strict";
 
-const moviesApi = [{
+const moviesApiLocalStock = [{
     "id": "1dbT8m7zIAIDhMSaoegS",
     "name": "KrampuS",
     "category": "R7njrf6DPHVvNRLpz4P0",
@@ -1062,7 +1062,8 @@ const moviesApi = [{
     "description": "Quatre garnements ont réussi à assister à la projection d'un film canadien de Terance et Phillip."
 }]
 
-const categoriesApi = [{
+
+const categoriesApiLocalStock = [{
     "id": "4sSKW4wg50CYFwvX8sHd",
     "name": "Perfection"
 }, {

@@ -77,8 +77,8 @@ const apiOnline = () => {
 }
 
 const apiLocal = () => {
-    moviesApiStock = moviesApi
-    categoriesApiStock = categoriesApi
+    moviesApiStock = moviesApiLocalStock
+    categoriesApiStock = categoriesApiLocalStock
     if (!localStorage.getItem(`moviesApiStock`)) {
         localStorage.setItem(`moviesApiStock`, JSON.stringify(moviesApiStock))
     }
