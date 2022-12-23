@@ -254,6 +254,10 @@ const changeInfo = (ActualMovies) => {
                                 moviesApiStock[toto].likes += 1
                             }
                             localStorage.setItem(`${e.id}+like`, 'true')
+                            localStorage.setItem(`moviesApiStock`, JSON.stringify(moviesApiStock))
+                            localStorage.setItem(`categoriesApiStock`, JSON.stringify(categoriesApiStock))
+                            moviesApiStock = JSON.parse(localStorage.getItem(`moviesApiStock`))
+                            categoriesApiStock = JSON.parse(localStorage.getItem(`categoriesApiStock`))
                         })
                         dislikesButton.addEventListener("click", () => {
                             if (!localStorage.getItem(`${e.id}+like`) && !localStorage.getItem(`${e.id}+dislike`)) {
@@ -262,6 +266,10 @@ const changeInfo = (ActualMovies) => {
                                 moviesApiStock[toto].dislikes += 1
                             }
                             localStorage.setItem(`${e.id}+dislike`, 'true')
+                            localStorage.setItem(`moviesApiStock`, JSON.stringify(moviesApiStock))
+                            localStorage.setItem(`categoriesApiStock`, JSON.stringify(categoriesApiStock))
+                            moviesApiStock = JSON.parse(localStorage.getItem(`moviesApiStock`))
+                            categoriesApiStock = JSON.parse(localStorage.getItem(`categoriesApiStock`))
                         })
                     }
                     let button_modal = document.querySelector(".button_modal")
@@ -335,6 +343,7 @@ const closeInfo = () => {
             details.style.display = "none"
             gsap.to(".details", { x: 0, duration: 0.5 });
         }, 100);
+        createMovies(moviesApiStock)
     })
 }
 
@@ -1003,3 +1012,24 @@ document.querySelector('#arrowLeft').addEventListener('click', () => {
 //? ********************************/
 //? ********************************/
 //? ********************************/
+
+//TODO *****************************/
+//TODO *** Change Section Number ***/
+//TODO *****************************/
+
+//#region Change Section Number
+window.addEventListener('resize', () => {
+    if (window.matchMedia("(width < 600px)").matches) {
+        maxMovie = 6
+        createMovies(moviesApiStock)
+    }
+    if (window.matchMedia("(width > 600px)").matches) {
+        maxMovie = 12
+        createMovies(moviesApiStock)
+    }
+});
+//#endregion
+
+//TODO *****************************/
+//TODO *****************************/
+//TODO *****************************/
